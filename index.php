@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,14 +21,16 @@
 </html>
 <div class="container">
     <div class="col-8">
-        <h2>Register</h2>
+        <h2>Sign-Up</h2>
     </div>
     <div class="col-10">
         <p><strong>Welcome, Please Register</strong></p>
     </div>
+    <hr/>
     <div class="col-10">
         <p>All Fields are required</p>
     </div>
+   
     <div class="col-8">
 
         <form method="POST" action="processregister.php" >
@@ -65,9 +70,9 @@
 
             <p>
                 <label>Password</label><br />
-                <input type="password" class="form-control" name="password" placeholder="Password"  />
+                           
+            <input type="password" class="form-control" name="password" placeholder="Password"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{15,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 15 or more characters" required>
             </p>
-            
         
             <p>
                 <label>Date of Birth</label><br />
@@ -126,8 +131,10 @@
             <p>
                 <label>Gender</label><br />
                 <input type="checkbox" id="male" name="male" value="male">
+                <?php if (isset($gender) && $gender=="male") echo "checked";?>
                 <label for="male">Male</label>
-                <input type="checkbox" id="female" name="female" value="femaler">
+                <input type="checkbox" id="female" name="female" value="female">
+                <?php if (isset($gender) && $gender=="female") echo "checked";?>
                 <label for="female"> Female</label><br>
         
                 
