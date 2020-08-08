@@ -2,18 +2,24 @@
 
 
 
-print_r($_POST);
-
-
-$first_name = $_POST ['first_name'];
-$last_name = $_POST ['last_name'];
+if(isset($_POST['submitted'])) {
+    
+$fname = $_POST ['fname'];
+$lname = $_POST ['lname'];
 $email = $_POST ['email'];
 $password = $_POST ['password'];
-$favorite_color = $_POST ['favorite_color'];
+$fcolor = $_POST ['fcolor'];
 $department = $_POST ['department'];
 
+}
+
 ?>
-//Validating
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,9 +30,11 @@ $department = $_POST ['department'];
 <body>
     <style type ="text/css">
     body {
-        background-color: <?php echo $favorite_color ?>
+        background-color: <?php echo $fcolor ?>
     }
   
     </style>
+
+    
 </body>
 </html>
